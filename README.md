@@ -6,5 +6,4 @@ Once the thumbnail picture is clicked, Image Page displays the enlarged picture 
 left and right through flip view. Image properties,
 such as name, type, size, dimensions, and date modified, are shown below the corresponding picture.
 
-Demo
 Check out the app at: https://youtu.be/oXWewl80Efc
