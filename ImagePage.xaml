@@ -1,0 +1,48 @@
+﻿<Page
+    x:Class="PictureApp.ImagePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PictureApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid FocusVisualPrimaryBrush="Black" BorderBrush="Black">
+        <!-- <Grid HorizontalAlignment="Center" Height="138" Margin="0,442,0,0" VerticalAlignment="Top" Width="965">-->
+
+        <!--<Image Name ="DisplayImage" Source="{Binding ImageData}" Height="346" Margin="-67,-377,-95,0" VerticalAlignment="Top" RenderTransformOrigin="0.079,-1.613"/>-->
+
+        <!--  </Grid>-->
+        <FlipView  BorderThickness="1" BorderBrush="Black" Name ="MyFlipView1"  HorizontalAlignment="Center" Margin="52, 55, 52, 0" VerticalAlignment="Top" Width="1175" Height="396" RenderTransformOrigin="0.5,0.5" SelectionChanged="MyFlipView_SelectionChanged">
+            <FlipView.RenderTransform>
+                <CompositeTransform ScaleX="1"/>
+            </FlipView.RenderTransform>
+            <FlipView.ItemTemplate>
+                <DataTemplate>
+                    <Image Height="Auto"  Width="Auto" Stretch="Uniform" Source="{Binding ImageData}"/>
+                </DataTemplate>
+            </FlipView.ItemTemplate>
+        </FlipView>
+        <StackPanel Margin = "52, 450,52, 100" BorderThickness="1" BorderBrush="Black"  Width="1175">
+            <StackPanel.FocusVisualPrimaryBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </StackPanel.FocusVisualPrimaryBrush>
+
+            <TextBlock x:Name="DisplayImageName" Text = " { Binding ImageName }"  Width = "666" Margin = "2" FontSize="18" />
+            <TextBlock x:Name="DisplayFileType" Text = " { Binding FileType }" Width = "666" Margin = "2" FontSize="18" />
+            <TextBlock x:Name="DisplayFileSize" Text = " { Binding Size }" Width = "666" Margin = "2" FontSize="18" />
+            <TextBlock x:Name="DisplayDimensions" Text = " { Binding ImageWidth ImageHeight }" Width = "666" Margin = "2" FontSize="18" />
+            <TextBlock x:Name="DisplayDateModified" Text = " { Binding DateModified }" Width = "666" Margin = "2" FontSize="18" />
+
+
+        </StackPanel>
+        <Button Content="Main Page" Margin="563,639,0,0"  VerticalAlignment="Top" Click="Button_Click" Height="46" Width="157" Background="#330FB690" FontWeight="Bold" BorderBrush="#FF019E9E" RenderTransformOrigin="0.529,1.435"/>
+
+
+    </Grid>
+
+</Page>
